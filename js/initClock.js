@@ -1,7 +1,8 @@
 	 /* 常量、全局变量 */
 	 const R=8;//小球半径
 	 const D=2*(R+1);//小球所占位置宽度
-	 const END_TIME=new Date(2014,10,30,5,30,00);//倒计时的结束时间
+	 //const END_TIME=new Date(2014,10,30,5,30,00);//倒计时的结束时间
+	 const END_TIME=initEndTime();//倒计时的结束时间
 	 const WINDOW_WIDTH=document.documentElement.clientWidth;//客户端浏览器有效宽度
 	 const WINDOW_HEIGHT=document.documentElement.clientHeight;//客户端浏览器有效高度
 	 var WIDTH=WINDOW_WIDTH;//画布宽度
@@ -16,6 +17,11 @@
 	 var balls=[];//新彩球
 
 	/* 方法 */
+	function initEndTime(){
+		var end=new Date();
+		end.setHours(end.getHours()+10);
+		return end;
+	}
 	//默认执行方法
 	window.onload=function(){
 		var canvas=document.getElementById('canvas');//获取画布对象
@@ -175,6 +181,7 @@
 		var second=curShowTimeSeconds%60;//秒
 
 		ctx.clearRect(0,0,WIDTH,HEIGHT);//清空画布
+		//console.log(hour+":"+minuts+":"+second);
 
 		/*  渲染数值 */
 		randDigit(LEFT_MARGIN,TOP_MARGIN,parseInt(hour/10),ctx);
