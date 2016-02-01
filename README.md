@@ -1,2 +1,2 @@
 # clock
-[clock](https://www.baidu.com)
+[clock](http://shuchun.github.io/clock/)
