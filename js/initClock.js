@@ -20,6 +20,11 @@
 	function initEndTime(){
 		var end=new Date();
 		end.setHours(end.getHours()+10);
+		
+		var timeText=end.getYear()+"-"+end.getMonth()+"-"+end.getDay();
+            timeText=timeText+" "+end.getHours()+":"+end.getMinutes()+":"+end.getSeconds();
+        var endTextNode=document.getElementById('endTime');
+		endTextNode.innerText='距离'+timeText+'还有：';
 		return end;
 	}
 	//默认执行方法
